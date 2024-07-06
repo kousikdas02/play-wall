@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Routes/Routes";
+import "./styles.scss"
+import { ThemeProvider } from "@mui/material";
+import { useMemo } from "react";
+import { createMuiTheme } from "./theme/theme";
 
 function App() {
+  const theme = useMemo(() => {
+    return createMuiTheme("light");
+    
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
 
