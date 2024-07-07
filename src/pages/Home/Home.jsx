@@ -56,7 +56,7 @@ const Home = () => {
         e.preventDefault();
         if (!checkBox) {
             console.log(checkBox)
-            toast.error('Please check the box to submit.', {
+            toast.error('Please check the checkbox to submit.', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -69,7 +69,7 @@ const Home = () => {
             return;
         }
         if (!validateEmail(formData.email)) {
-            toast.error('Please enter valid mail.', {
+            toast.error('Please enter a valid email.', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
