@@ -163,7 +163,7 @@ export const HomeWrapperStyled = styled(Box)`
             .focused{
                input{
                 color:#000000;
-                background-color: #00FF82 !important;
+                background-color: #00FF82;
                }
             }
             .formSubmittedBtn{

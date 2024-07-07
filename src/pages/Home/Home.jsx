@@ -146,7 +146,7 @@ const Home = () => {
 
                                         <form onSubmit={handleSubmit}>
                                             <Box className="homeFormInput">
-                                                <TextField onFocus={handleOnFocus} onBlur={handleBlur} fullWidth placeholder='REGISTER WITH YOUR EMAIL ADDRESS' variant="outlined" value={formData.email} onChange={handleChange} className={`${formSubmitted === true ? "formSubmitted" : ""} ${isFocused === true ? "focused" : ""}`} />
+                                                <TextField onFocus={handleOnFocus} onBlur={handleBlur} inputProps={{ readOnly: formSubmitted }} fullWidth placeholder='REGISTER WITH YOUR EMAIL ADDRESS' variant="outlined" value={formData.email} onChange={handleChange} className={`${formSubmitted === true ? "formSubmitted" : ""} ${isFocused === true ? "focused" : ""}`} />
                                                 {formSubmitted !== true ?
                                                     <Button type='submit' className={isFocused === true ? "homeFormSubmitBtn hoverSubmit" : "homeFormSubmitBtn"}>
                                                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
