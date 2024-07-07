@@ -43,10 +43,10 @@ export const HomeWrapperStyled = styled(Box)`
             }
     
             .MuiInputBase-input {
+                color: #fff;
                 font-size: 16px;
                 font-family: "Encode Sans", sans-serif;
                 padding: 32px 85px 32px 20px;
-                color: #000000;
                 background-color: #000000;
                 border-radius: 50px;
                 border: 1px solid #00FF82;
@@ -154,7 +154,54 @@ export const HomeWrapperStyled = styled(Box)`
                     }
                 }
             }
+            .formSubmitted{
+               input{
+                color:#fff !important;
+                background-color: #000000 !important;
+               }
+            }
+            .focused{
+               input{
+                color:#000000;
+                background-color: #00FF82 !important;
+               }
+            }
+            .formSubmittedBtn{
+                height: 40px;
+                width: 40px;
+                background: #00FF82;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                min-width: initial;
+                position: absolute;
+                right: 32px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1;
+                @media (max-width: 1299px) {
+                    right: 20px;                       
+                }
+                @media (max-width: 374px) {
+                    width: 30px;
+                    height: 30px;
+                }
 
+                    svg{
+                        transition: 0.3s all ease;
+                    }
+
+                    &.hoverSubmit{
+                        background: #000000;
+                        svg{
+                            path{
+                                fill: #ffffff;
+                            }
+                        }
+                    }
+            }
         }
         .MuiFormControlLabel-root {
             .MuiFormControlLabel-label{
