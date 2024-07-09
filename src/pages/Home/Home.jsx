@@ -84,7 +84,7 @@ const Home = () => {
         const data = new FormData();
         data.append('email', formData.email);
         data.append('createdAt', moment().format('MMMM Do YYYY, h:mm:ss a'));
-        const Sheet_Url = 'https://script.google.com/macros/s/AKfycbwqLShbxsSRvbCVTl_54PRoMOvjqJ9EQ8hvnY2H6RjdCLwIH3BQgxgXzDELVMMnTWD6/exec';
+        const Sheet_Url = 'https://script.google.com/macros/s/AKfycby5k415kEPVb99ZdSIhbC7X5fXXPPnZ7UaSqcLDYlrEP5vnHLtkhGT5mONv3keOoAG9/exec';
         try {
             await fetch(Sheet_Url, {
                 method: 'POST',
