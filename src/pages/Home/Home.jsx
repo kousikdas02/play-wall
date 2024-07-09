@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Container, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, Grid, TextField, Typography } from '@mui/material'
+import { Box, Button, Checkbox, CircularProgress, Container, Dialog, DialogActions, DialogContent, DialogTitle, FormControlLabel, Grid, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/images/Logo'
@@ -10,6 +10,7 @@ import { HomeWrapperStyled } from '../../styledComponents/HomeWrapperStyled';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from 'moment';
+
 
 const Home = () => {
     const [isFocused, setIsFocused] = useState(false);
@@ -84,7 +85,10 @@ const Home = () => {
         const data = new FormData();
         data.append('email', formData.email);
         data.append('createdAt', moment().format('MMMM Do YYYY, h:mm:ss a'));
-        const Sheet_Url = 'https://script.google.com/macros/s/AKfycby5k415kEPVb99ZdSIhbC7X5fXXPPnZ7UaSqcLDYlrEP5vnHLtkhGT5mONv3keOoAG9/exec';
+        // client er
+        // const Sheet_Url = 'https://script.google.com/macros/s/AKfycby5k415kEPVb99ZdSIhbC7X5fXXPPnZ7UaSqcLDYlrEP5vnHLtkhGT5mONv3keOoAG9/exec';
+        // amadr
+        const Sheet_Url = 'https://script.google.com/macros/s/AKfycbwuXpP-30wfduq0xm-H9JwQxiknmEpZW8judK0si2bqCkBWXCL0LTMS9327FOe8BR6b1g/exec';
         try {
             await fetch(Sheet_Url, {
                 method: 'POST',
@@ -147,7 +151,7 @@ const Home = () => {
                                         <form onSubmit={handleSubmit}>
                                             <Box className="homeFormInput">
                                                 <TextField onFocus={handleOnFocus} onBlur={handleBlur} inputProps={{ readOnly: formSubmitted }} fullWidth placeholder='REGISTER WITH YOUR EMAIL ADDRESS' variant="outlined" value={formData.email} onChange={handleChange} className={`${formSubmitted === true ? "formSubmitted" : ""} ${isFocused === true ? "focused" : ""}`} />
-                                                {formSubmitted !== true ?
+                                                {/* {formSubmitted !== true ?
                                                     <Button type='submit' className={isFocused === true ? "homeFormSubmitBtn hoverSubmit" : "homeFormSubmitBtn"}>
                                                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M1 9.49997H12.17L7.29 14.38C6.9 14.77 6.9 15.41 7.29 15.8C7.68 16.19 8.31 16.19 8.7 15.8L15.29 9.20997C15.68 8.81997 15.68 8.18997 15.29 7.79997L8.71 1.19997C8.32 0.809971 7.69 0.809971 7.3 1.19997C6.91 1.58997 6.91 2.21997 7.3 2.60997L12.17 7.49997H1C0.45 7.49997 0 7.94997 0 8.49997C0 9.04997 0.45 9.49997 1 9.49997Z" fill="black" />
@@ -159,7 +163,12 @@ const Home = () => {
                                                             <path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill="black" />
                                                         </svg>
                                                     </Button>
-                                                }
+                                                } */}
+                                               <Button className="formSubmittedBtn" disabled>
+                                                <CircularProgress style={{color: "#fff"}} size={23} />
+
+                                               </Button>
+                                                
 
 
 
