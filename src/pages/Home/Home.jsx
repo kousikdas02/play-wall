@@ -188,7 +188,7 @@ const Home = () => {
                 <Box className="footer">
                     <Container maxWidth={false}>
                         <Typography variant='body1'>
-                            2023 PlayWall. All rights reserved
+                            2024 PlayWall. All rights reserved
                         </Typography>
                     </Container>
                 </Box>

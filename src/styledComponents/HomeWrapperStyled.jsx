@@ -52,8 +52,8 @@ export const HomeWrapperStyled = styled(Box)`
                 border: 1px solid #00FF82;
                 font-weight: 400;
                 transition: 0.3s all ease;
-                @media (max-width: 374px) {
-                    font-size: 15px;
+                @media (max-width: 559px) {
+                    font-size: 12px;
                 }
 
                 @media (max-width: 1299px) {
