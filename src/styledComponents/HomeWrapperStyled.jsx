@@ -211,7 +211,7 @@ export const HomeWrapperStyled = styled(Box)`
                 padding-top: 2px;
 
                 @media (max-width: 599px) {
-                    font-size: 10px;
+                    font-size: 14px;
                     line-height: 1.2;
 
                 }
@@ -228,7 +228,7 @@ export const HomeWrapperStyled = styled(Box)`
                     margin: 0 0 4px;
 
                     @media (max-width: 599px) {
-                        font-size: 10px;
+                        font-size: 14px;
                         margin: 0 0 1.8px;
                         line-height: 1.2;
                     }
@@ -242,6 +242,9 @@ export const HomeWrapperStyled = styled(Box)`
         p{
             color: #5F5F5F;
             font-size: 16px;
+            @media (max-width: 599px) {
+                font-size: 14px;
+            }
         }
         @media (max-width: 899px) {
             text-align: center;
