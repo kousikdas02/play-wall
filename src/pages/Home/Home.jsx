@@ -41,6 +41,7 @@ const Home = () => {
 
     const [formData, setFormData] = useState({ email: '' });
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [showLoader, setShowLoader] = useState(false);
     const handleChange = (e) => {
         setFormData({ email: e.target.value });
     };
@@ -82,6 +83,7 @@ const Home = () => {
             });
             return;
         }
+        setShowLoader(true);
         const data = new FormData();
         data.append('email', formData.email);
         data.append('createdAt', moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -99,8 +101,20 @@ const Home = () => {
                 email: 'SENT!',
             });
             setFormSubmitted(true);
+            setShowLoader(false);
         } catch (error) {
             console.log(error);
+            setShowLoader(false);
+            toast.error('Please try again.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     };
     const handleLogoClick = () => {
@@ -113,7 +127,6 @@ const Home = () => {
     }
     const [checkBox, setCheckBox] = useState(false);
     const handleCheckBoxChange = (e) => {
-        console.log(e.target.checked)
         setCheckBox(e.target.checked);
     }
     return (
@@ -148,30 +161,28 @@ const Home = () => {
                                     </Box>
                                     <Box className="homeForm">
 
-                                        <form onSubmit={handleSubmit}>
+                                        <form onSubmit={handleSubmit} autoComplete='off'>
                                             <Box className="homeFormInput">
-                                                <TextField onFocus={handleOnFocus} onBlur={handleBlur} inputProps={{ readOnly: formSubmitted }} fullWidth placeholder='REGISTER WITH YOUR EMAIL ADDRESS' variant="outlined" value={formData.email} onChange={handleChange} className={`${formSubmitted === true ? "formSubmitted" : ""} ${isFocused === true ? "focused" : ""}`} />
-                                                {/* {formSubmitted !== true ?
-                                                    <Button type='submit' className={isFocused === true ? "homeFormSubmitBtn hoverSubmit" : "homeFormSubmitBtn"}>
-                                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M1 9.49997H12.17L7.29 14.38C6.9 14.77 6.9 15.41 7.29 15.8C7.68 16.19 8.31 16.19 8.7 15.8L15.29 9.20997C15.68 8.81997 15.68 8.18997 15.29 7.79997L8.71 1.19997C8.32 0.809971 7.69 0.809971 7.3 1.19997C6.91 1.58997 6.91 2.21997 7.3 2.60997L12.17 7.49997H1C0.45 7.49997 0 7.94997 0 8.49997C0 9.04997 0.45 9.49997 1 9.49997Z" fill="black" />
-                                                        </svg>
-                                                    </Button>
-                                                    :
+                                                <TextField disabled={showLoader} onFocus={handleOnFocus} onBlur={handleBlur} inputProps={{ readOnly: formSubmitted }} fullWidth placeholder='REGISTER WITH YOUR EMAIL ADDRESS' variant="outlined" value={formData.email} onChange={handleChange} className={`${formSubmitted === true ? "formSubmitted" : ""} ${isFocused === true ? "focused" : ""}`} />
+                                                {showLoader === true ?
                                                     <Button className="formSubmittedBtn" disabled>
-                                                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill="black" />
-                                                        </svg>
+                                                        <CircularProgress style={{ color: "#000" }} size={23} />
                                                     </Button>
-                                                } */}
-                                               <Button className="formSubmittedBtn" disabled>
-                                                <CircularProgress style={{color: "#fff"}} size={23} />
 
-                                               </Button>
-                                                
-
-
-
+                                                    :
+                                                    formSubmitted !== true ?
+                                                        <Button type='submit' className={isFocused === true ? "homeFormSubmitBtn hoverSubmit" : "homeFormSubmitBtn"}>
+                                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 9.49997H12.17L7.29 14.38C6.9 14.77 6.9 15.41 7.29 15.8C7.68 16.19 8.31 16.19 8.7 15.8L15.29 9.20997C15.68 8.81997 15.68 8.18997 15.29 7.79997L8.71 1.19997C8.32 0.809971 7.69 0.809971 7.3 1.19997C6.91 1.58997 6.91 2.21997 7.3 2.60997L12.17 7.49997H1C0.45 7.49997 0 7.94997 0 8.49997C0 9.04997 0.45 9.49997 1 9.49997Z" fill="black" />
+                                                            </svg>
+                                                        </Button>
+                                                        :
+                                                        <Button className="formSubmittedBtn" disabled>
+                                                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill="black" />
+                                                            </svg>
+                                                        </Button>
+                                                }
                                             </Box>
 
                                             <FormControlLabel onChange={handleCheckBoxChange} control={<Checkbox icon={<CheckBoxDefaultIcon />} checkedIcon={<CheckBoxCheckedIcon />} />} label={<>By signing up for the newsletter I agree to the <Button onClick={handleClickOpenTerms}>Terms and Conditions</Button> and <Button onClick={handleClickOpenPolicy}>Privacy Policy</Button>.</>} />
