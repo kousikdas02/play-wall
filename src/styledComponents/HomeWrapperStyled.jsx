@@ -207,12 +207,12 @@ export const HomeWrapperStyled = styled(Box)`
             .MuiFormControlLabel-label{
                 font-size: 15px;
                 color: #8D8D8D;
-                line-height: 1.2;
+                line-height: 1.5;
                 padding-top: 2px;
 
                 @media (max-width: 599px) {
                     font-size: 14px;
-                    line-height: 1.2;
+                    /* line-height: 1.2; */
 
                 }
 
@@ -225,12 +225,12 @@ export const HomeWrapperStyled = styled(Box)`
                     font-weight: 400;
                     border-radius: 0;
                     color: rgba(0, 255, 130, .6);
-                    margin: 0 0 4px;
+                    margin: 0 0 3px;
 
                     @media (max-width: 599px) {
                         font-size: 14px;
                         margin: 0 0 1.8px;
-                        line-height: 1.2;
+                        /* line-height: 1.2; */
                     }
                 }
             }
@@ -306,6 +306,11 @@ export const HomeWrapperStyled = styled(Box)`
                 width: 100%;
             }
         }
+    }
+
+
+    .checkBoxFormControl{
+        align-items: flex-start;
     }
 
 `
