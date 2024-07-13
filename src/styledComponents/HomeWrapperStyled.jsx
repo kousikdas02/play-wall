@@ -112,7 +112,7 @@ export const HomeWrapperStyled = styled(Box)`
         }
         .homeFormInput {
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 18px;
             @media (max-width: 1299px) {
                 margin-bottom: 15px;
             }
@@ -204,11 +204,22 @@ export const HomeWrapperStyled = styled(Box)`
             }
         }
         .MuiFormControlLabel-root {
+            margin-left: 5px;
+            @media (max-width: 899px) {
+                margin-right: 0;
+            }
+            .MuiCheckbox-root{
+                padding: 0;
+                margin-right: 9px;
+                padding-top: 1px;
+            }
             .MuiFormControlLabel-label{
                 font-size: 15px;
                 color: #8D8D8D;
                 line-height: 1.5;
-                padding-top: 2px;
+                /* padding-top: 2px; */
+                text-align: justify;
+               
 
                 @media (max-width: 599px) {
                     font-size: 14px;

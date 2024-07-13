@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import Logo from '../../assets/images/Logo'
 import CheckBoxCheckedIcon from "../../assets/icons/CheckBoxCheckedIcon";
 import CheckBoxDefaultIcon from '../../assets/icons/CheckBoxDefaultIcon';
-import RightImage from "../../assets/images/right-img.png";
+// import RightImage from "../../assets/images/right-img.png";
+import RightImageNew from "../../assets/images/right-img-new.png";
+
 import RightImageMobile from "../../assets/images/right-img-mobile.png";
 import { HomeWrapperStyled } from '../../styledComponents/HomeWrapperStyled';
 import { ToastContainer, toast } from 'react-toastify';
@@ -149,7 +151,7 @@ const Home = () => {
                 <Box className="homeMain">
                     <Container maxWidth={false}>
                         <Grid container rowSpacing={2.5} columnSpacing={9.5} alignItems={'center'}>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} md={5.4}>
                                 <Box className="homeMainConent">
 
                                     <Box className="homeMainConent_heading">
@@ -192,17 +194,17 @@ const Home = () => {
 
 
 
-                                            <FormControlLabel className='checkBoxFormControl' onChange={handleCheckBoxChange} control={<Checkbox icon={<CheckBoxDefaultIcon />} checkedIcon={<CheckBoxCheckedIcon />} />} label={<>I want to receive the Service Provider's offer, information about new products, services, promotional activities, and the Service Provider's activities, and I subscribe to the Newsletter service. I accept the content of the Newsletter <Button onClick={handleClickOpenTerms}>Terms and Conditions</Button> and the applicable <Button onClick={handleClickOpenPolicy}>Privacy Policy</Button>. The above consent can be withdrawn at any time by clicking the unsubscribe button included in every email sent under this consent. <br /> <Button style={{ marginTop: "10px" }} onClick={handleClickOpenDataController}>Data Controller Information</Button></>} />
+                                            <FormControlLabel className='checkBoxFormControl' onChange={handleCheckBoxChange} control={<Checkbox icon={<CheckBoxDefaultIcon />} checkedIcon={<CheckBoxCheckedIcon />} />} label={<>I want to receive the Service Provider's offer, information about new products, services, promotional activities, and the Service Provider's activities, and I subscribe to the Newsletter service. I accept the content of the Newsletter <Button onClick={handleClickOpenTerms}>Terms and Conditions</Button> and the applicable <Button onClick={handleClickOpenPolicy}>Privacy Policy</Button>. The above consent can be withdrawn at any time by clicking the unsubscribe button included in every email sent under this consent. <br /> <Button style={{ marginTop: "15px" }} onClick={handleClickOpenDataController}>Data Controller Information</Button></>} />
 
                                         </form>
 
                                     </Box>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} md={6} sx={{ display: { md: 'block', xs: 'none' } }}>
+                            <Grid item xs={12} md={6.6} sx={{ display: { md: 'block', xs: 'none' } }}>
                                 <Box className='imageColumn'>
                                     <figure>
-                                        <img src={RightImage} alt="" />
+                                        <img src={RightImageNew} alt="" />
                                     </figure>
                                 </Box>
                             </Grid>
