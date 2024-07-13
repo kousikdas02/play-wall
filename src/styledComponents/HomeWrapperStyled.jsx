@@ -288,6 +288,9 @@ export const HomeWrapperStyled = styled(Box)`
                     h1{
                         font-size: 103px;
 
+                        @media (max-width: 1399px) {
+                            font-size: 90px;
+                        }
                         @media (max-width: 1299px) {
                             font-size: 60px;
                         }
