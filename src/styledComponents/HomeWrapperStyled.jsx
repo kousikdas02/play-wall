@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 
 export const HomeWrapperStyled = styled(Box)`
     .MuiContainer-root {
-        padding: 0 0 0 80px;
+        padding: 0 60px 0 80px;
         @media (max-width: 899px) {
             padding: 0 35px;
         }
@@ -11,7 +11,7 @@ export const HomeWrapperStyled = styled(Box)`
         }
     }
     .header{
-        padding: 40px 0;
+        padding: 40px 0 20px;
         @media (max-width: 899px) {
             padding: 20px 0 40px;
         }
@@ -30,8 +30,8 @@ export const HomeWrapperStyled = styled(Box)`
         }
     }
     .homeForm{
-        padding: 45px 0 0;
-        /* max-width: 535px; */
+        padding: 25px 0 0;
+        max-width: 600px;
 
         @media (max-width: 899px) {
             padding: 20px 0 0;
@@ -303,11 +303,20 @@ export const HomeWrapperStyled = styled(Box)`
             }
         }
         .imageColumn{
+            position: relative;
+            /* margin-top: -20px; */
             figure{
                 display: flex;
                 justify-content: flex-end;
                 img{
-                    width: 100%;
+                    width: 80%;
+
+                    @media (max-width: 1299px) {
+                        width: 90%;
+                    }
+                    @media (max-width: 1199px) {
+                        width: 100%;
+                    }
                 }
             }
         }
