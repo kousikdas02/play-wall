@@ -11,7 +11,7 @@ export const HomeWrapperStyled = styled(Box)`
         }
     }
     .header{
-        padding: 40px 0 20px;
+        padding: 40px 0 40px;
         @media (max-width: 899px) {
             padding: 20px 0 40px;
         }
@@ -30,7 +30,7 @@ export const HomeWrapperStyled = styled(Box)`
         }
     }
     .homeForm{
-        padding: 25px 0 0;
+        padding: 35px 0 0;
         max-width: 600px;
 
         @media (max-width: 899px) {
@@ -304,12 +304,12 @@ export const HomeWrapperStyled = styled(Box)`
         }
         .imageColumn{
             position: relative;
-            /* margin-top: -20px; */
+            margin-top: -20px;
             figure{
                 display: flex;
                 justify-content: flex-end;
                 img{
-                    width: 80%;
+                    width: 90%;
 
                     @media (max-width: 1299px) {
                         width: 90%;
@@ -324,6 +324,7 @@ export const HomeWrapperStyled = styled(Box)`
 
     .imageColumn_Mobile{
         padding-top: 20px;
+
         figure{
             img{
                 width: 100%;

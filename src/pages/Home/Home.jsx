@@ -151,7 +151,7 @@ const Home = () => {
                 <Box className="homeMain">
                     <Container maxWidth={false}>
                         <Grid container rowSpacing={2.5} columnSpacing={9.5} alignItems={'center'}>
-                            <Grid item xs={12} md={5.4}>
+                            <Grid item xs={12} md={5.8}>
                                 <Box className="homeMainConent">
 
                                     <Box className="homeMainConent_heading">
@@ -201,7 +201,7 @@ const Home = () => {
                                     </Box>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} md={6.6} sx={{ display: { md: 'block', xs: 'none' } }}>
+                            <Grid item xs={12} md={6.2} sx={{ display: { md: 'block', xs: 'none' } }}>
                                 <Box className='imageColumn'>
                                     <figure>
                                         <img src={RightImageNew} alt="" />
